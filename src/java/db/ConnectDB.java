@@ -15,7 +15,7 @@ import java.sql.SQLException;
  */
 public class ConnectDB {
     private final String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-    private final String url = "jdbc:sqlserver://localhost:1433;database=db_app;user=carl;password=carl;";
+    private final String url = "jdbc:sqlserver://192.168.79.1:1433;database=db_app;user=carl;password=carl;";
 
     public Connection getConnection() throws SQLException {
         Connection cn = null;

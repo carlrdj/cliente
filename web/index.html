@@ -9,227 +9,241 @@ and open the template in the editor.
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     </head>
     <body>
 
-        <h1>Clientes</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1>Clientes</h1>
 
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>DNI</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Dirección</th>
-                    <th>Estado</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody id="clientes">
+                    <table border="1" class="table table-hover table-striped">
+                        <thead class="thead-dark text-center">
+                            <tr>
+                                <th>DNI</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Dirección</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="clientes">
 
-            </tbody>
-        </table>
-
-
-        <form>
-            <h2>Editar cliente</h2>
-            <div>
-                <label for="inputNombre">Nombre(*)</label>
-                <input type="text" id="inputNombre" placeholder="Ingrese nombre">
-            </div>
-            <div>
-                <label for="inputApellido">Apellido(*)</label>
-                <input type="text" id="inputApellido" placeholder="Ingrese apellidos">
-            </div>
-            <div>
-                <label for="inputDni">Dni(*)</label>
-                <input type="text" id="inputDni" placeholder="Ingrese DNI">
-            </div>
-            <div>
-                <label for="inputDireccion">Dirección(*)</label>
-                <input type="text" id="inputDireccion" placeholder="Ingrese dirección">
-            </div>
-            <div>
-                <button type="button" onclick="editarCliente()">GUARDAR</button>
-            </div>
-        </form>
+                        </tbody>
+                    </table>
 
 
+                    <form>
+                        <h2>Editar cliente</h2>
+                        <div>
+                            <label for="inputNombre">Nombre(*)</label>
+                            <input type="text" id="inputNombre" placeholder="Ingrese nombre">
+                        </div>
+                        <div>
+                            <label for="inputApellido">Apellido(*)</label>
+                            <input type="text" id="inputApellido" placeholder="Ingrese apellidos">
+                        </div>
+                        <div>
+                            <label for="inputDni">Dni(*)</label>
+                            <input type="text" id="inputDni" placeholder="Ingrese DNI">
+                        </div>
+                        <div>
+                            <label for="inputDireccion">Dirección(*)</label>
+                            <input type="text" id="inputDireccion" placeholder="Ingrese dirección">
+                        </div>
+                        <div>
+                            <button type="button" onclick="editarCliente()">GUARDAR</button>
+                        </div>
+                    </form>
 
-        <form>
-            <h2>Registrar cliente</h2>
-            <div>
-                <label for="insertNombre">Nombre(*)</label>
-                <input type="text" id="insertNombre" placeholder="Ingrese nombre">
+
+
+                    <form>
+                        <h2>Registrar cliente</h2>
+                        <div>
+                            <label for="insertNombre">Nombre(*)</label>
+                            <input type="text" id="insertNombre" placeholder="Ingrese nombre">
+                        </div>
+                        <div>
+                            <label for="insertApellido">Apellido(*)</label>
+                            <input type="text" id="insertApellido" placeholder="Ingrese apellidos">
+                        </div>
+                        <div>
+                            <label for="insertDni">Dni(*)</label>
+                            <input type="text" id="insertDni" placeholder="Ingrese DNI">
+                        </div>
+                        <div>
+                            <label for="insertDireccion">Dirección(*)</label>
+                            <input type="text" id="insertDireccion" placeholder="Ingrese dirección">
+                        </div>
+                        <div>
+                            <button type="button" onclick="insertarCliente()">GUARDAR</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div>
-                <label for="insertApellido">Apellido(*)</label>
-                <input type="text" id="insertApellido" placeholder="Ingrese apellidos">
-            </div>
-            <div>
-                <label for="insertDni">Dni(*)</label>
-                <input type="text" id="insertDni" placeholder="Ingrese DNI">
-            </div>
-            <div>
-                <label for="insertDireccion">Dirección(*)</label>
-                <input type="text" id="insertDireccion" placeholder="Ingrese dirección">
-            </div>
-            <div>
-                <button type="button" onclick="insertarCliente()">GUARDAR</button>
-            </div>
-        </form>
+        </div>
+
+
 
         <script
             src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous"></script>
 
-        <script type="javascript">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+        <script>
+            
             listarClientes()
             function listarClientes() {
-                $.ajax({
-                    url: 'http://localhost:8080/AppCliente/cliente',
-                    type: 'GET',
-                    success: function (res) {
+            $.ajax({
+            url: 'http://localhost:8080/AppCliente/cliente',
+            type: 'GET',
+            success: function (res) {
 
-                        var htmlGenerado = ''
+            var htmlGenerado = ''
 
-                        res.forEach(cliente => {
-                            var botonEstado = ''
-                            // Cliente es 'N'  'Habilitar'
-                            if (cliente.habilitar == 'Y') {
-                                botonEstado = `<button onclick="cambiarEstado('N', '${cliente.dni}')">Inhabilitar</button>`
-                            } else {
-                                botonEstado = `<button onclick="cambiarEstado('Y', '${cliente.dni}')">Habilitar</button>`
-                            }
-                            // Cliente es 'Y'  'Inhabilitar'
-                            
-                            
-                            htmlGenerado += `
-                            <tr>
-                                <td>${cliente.dni}</td>
-                                <td>${cliente.nombre}</td>
-                                <td>${cliente.apellido}</td>
-                                <td>${cliente.direccion}</td>
-                                <td>${cliente.habilitar}</td>
-                                <td>
-                                  <button onclick="obtenerDetalleCliente('${cliente.dni}')">Detalle</button>
-                                  ${botonEstado}
-                                </td>
-                            </tr>
-                            `
-                        })
+            res.forEach(cliente => {
+            var botonEstado = ''
+            // Cliente es 'N'  'Habilitar'
+            if (cliente.habilitar == 'Y') {
+            botonEstado = `<button onclick="cambiarEstado('N', '${cliente.dni}')">Inhabilitar</button>`
+            } else {
+            botonEstado = `<button onclick="cambiarEstado('Y', '${cliente.dni}')">Habilitar</button>`
+            }
+            // Cliente es 'Y'  'Inhabilitar'
 
-                        var tbody = document.getElementById('clientes')
-                        tbody.innerHTML = htmlGenerado
 
-                    }
-                })
+            htmlGenerado += `
+            <tr>
+            <td>${cliente.dni}</td>
+            <td>${cliente.nombre}</td>
+            <td>${cliente.apellido}</td>
+            <td>${cliente.direccion}</td>
+            <td>${cliente.habilitar}</td>
+            <td>
+            <button onclick="obtenerDetalleCliente('${cliente.dni}')" class="btn btn-primary">Detalle</button>
+            ${botonEstado}
+            </td>
+            </tr>
+            `
+            })
+
+            var tbody = document.getElementById('clientes')
+            tbody.innerHTML = htmlGenerado
 
             }
-            
-            
-            
+            })
+
+            }
+
+
+
             function obtenerDetalleCliente(myDni){
-                // console.log(myDni);
-                $.ajax({
-                    url: `http://localhost:8080/AppCliente/cliente?holaMundo=${myDni}`,
-                    type: 'GET',
-                    success: function(myRes) {
-                        // console.log(myRes)
-                        /*
-                        { 
-                            nombre: "Jose Paolo", 
-                            apellido: "Guerrero", 
-                            dni: "98744632", 
-                            direccion: "Av. Venezuela 545456", 
-                            habilitar: "Y"
-                          }
-                        */
-                        var myInputNombre = document.getElementById('inputNombre')
-                        var myInputApellido = document.getElementById('inputApellido')
-                        var myInputDni = document.getElementById('inputDni')
-                        var myInputDireccion = document.getElementById('inputDireccion')
-                        myInputNombre.value = myRes.nombre
-                        myInputApellido.value = myRes.apellido
-                        myInputDireccion.value = myRes.direccion
-                        myInputDni.value = myRes.dni
-                        
-                    }
-                })
+            // console.log(myDni);
+            $.ajax({
+            url: `http://localhost:8080/AppCliente/cliente?holaMundo=${myDni}`,
+            type: 'GET',
+            success: function(myRes) {
+            // console.log(myRes)
+            /*
+            { 
+            nombre: "Jose Paolo", 
+            apellido: "Guerrero", 
+            dni: "98744632", 
+            direccion: "Av. Venezuela 545456", 
+            habilitar: "Y"
             }
-            
-            
-            
+            */
+            var myInputNombre = document.getElementById('inputNombre')
+            var myInputApellido = document.getElementById('inputApellido')
+            var myInputDni = document.getElementById('inputDni')
+            var myInputDireccion = document.getElementById('inputDireccion')
+            myInputNombre.value = myRes.nombre
+            myInputApellido.value = myRes.apellido
+            myInputDireccion.value = myRes.direccion
+            myInputDni.value = myRes.dni
+
+            }
+            })
+            }
+
+
+
             function editarCliente() {
-                var myInputNombre = document.getElementById('inputNombre')
-                var myInputApellido = document.getElementById('inputApellido')
-                var myInputDni = document.getElementById('inputDni')
-                var myInputDireccion = document.getElementById('inputDireccion')
-                
-                $.ajax({
-                    url: 'http://localhost:8080/AppCliente/cliente',
-                    data: JSON.stringify(
-                    {
-                        nombre: myInputNombre.value,
-                        apellido: myInputApellido.value,
-                        dni: myInputDni.value,
-                        direccion: myInputDireccion.value                        
-                    }
-                    ),
-                    type: 'PUT',
-                    dataType: 'JSON',
-                    success: function (myRes) {
-                        console.log(myRes)
-                        listarClientes()
-                        limpiarFormularioEditar()
-                    }
-                })
-                
+            var myInputNombre = document.getElementById('inputNombre')
+            var myInputApellido = document.getElementById('inputApellido')
+            var myInputDni = document.getElementById('inputDni')
+            var myInputDireccion = document.getElementById('inputDireccion')
+
+            $.ajax({
+            url: 'http://localhost:8080/AppCliente/cliente',
+            data: JSON.stringify(
+            {
+            nombre: myInputNombre.value,
+            apellido: myInputApellido.value,
+            dni: myInputDni.value,
+            direccion: myInputDireccion.value                        
             }
-            
+            ),
+            type: 'PUT',
+            dataType: 'JSON',
+            success: function (myRes) {
+            console.log(myRes)
+            listarClientes()
+            limpiarFormularioEditar()
+            }
+            })
+
+            }
+
             function limpiarFormularioEditar(){
-                var myInputNombre = document.getElementById('inputNombre')
-                var myInputApellido = document.getElementById('inputApellido')
-                var myInputDni = document.getElementById('inputDni')
-                var myInputDireccion = document.getElementById('inputDireccion')
-                myInputNombre.value = ''
-                myInputApellido.value = ''
-                myInputDni.value = ''
-                myInputDireccion.value = ''
+            var myInputNombre = document.getElementById('inputNombre')
+            var myInputApellido = document.getElementById('inputApellido')
+            var myInputDni = document.getElementById('inputDni')
+            var myInputDireccion = document.getElementById('inputDireccion')
+            myInputNombre.value = ''
+            myInputApellido.value = ''
+            myInputDni.value = ''
+            myInputDireccion.value = ''
             }
-            
+
             function insertarCliente() {
-                var myInsertNombre = document.getElementById('insertNombre')
-                var myInsertApellido = document.getElementById('insertApellido')
-                var myInsertDni = document.getElementById('insertDni')
-                var myInsertDireccion = document.getElementById('insertDireccion')
-                
-                $.ajax({
-                    url: 'http://localhost:8080/AppCliente/cliente',
-                    data: JSON.stringify({
-                        nombre: myInsertNombre.value,
-                        apellido: myInsertApellido.value,
-                        dni: myInsertDni.value,
-                        direccion: myInsertDireccion.value   
-                    }),
-                    dataType: 'JSON',
-                    type: 'POST',
-                    success: function(res) {
-                        listarClientes()
-                    }
-                })
+            var myInsertNombre = document.getElementById('insertNombre')
+            var myInsertApellido = document.getElementById('insertApellido')
+            var myInsertDni = document.getElementById('insertDni')
+            var myInsertDireccion = document.getElementById('insertDireccion')
+
+            $.ajax({
+            url: 'http://localhost:8080/AppCliente/cliente',
+            data: JSON.stringify({
+            nombre: myInsertNombre.value,
+            apellido: myInsertApellido.value,
+            dni: myInsertDni.value,
+            direccion: myInsertDireccion.value   
+            }),
+            dataType: 'JSON',
+            type: 'POST',
+            success: function(res) {
+            listarClientes()
             }
-            
-                 
+            })
+            }
+
+
             function cambiarEstado(myEstado, myDni){
-                $.ajax({
-                    url: `http://localhost:8080/AppCliente/cliente?dni=${myDni}&estado=${myEstado}`,
-                    type: 'DELETE',
-                    success: function() {
-                        listarClientes()
-                    }
-                })
+            $.ajax({
+            url: `http://localhost:8080/AppCliente/cliente?dni=${myDni}&estado=${myEstado}`,
+            type: 'DELETE',
+            success: function() {
+            listarClientes()
+            }
+            })
             }
         </script>
 
